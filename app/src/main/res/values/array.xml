@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="questionArray">
+        <item>Which is the correct order, starting with the smallest and ending with the largest?</item>
+        <item>What do we call an object that is in orbit around a planet?</item>
+        <item>Which is the third planet from the Sun?</item>
+        <item>Which force keeps the planets in orbit?</item>
+        <item>The orbits of the planets are:</item>
+        <item>The further away from the Sun:</item>
+        <item>Why is a day on Mars about 37 minutes longer than a day on Earth?</item>
+        <item>In which direction does the Earth spin?</item>
+        <item>Why do we have seasons on Earth?</item>
+        <item>Which of the following is not a use of artificial satellites?</item>
+
+    </string-array>
+
+    <string-array name="firstAnswers">
+        <item>planet - star - galaxy</item>
+        <item>a star</item>
+        <item>Mars</item>
+        <item>friction</item>
+        <item>perfect circles</item>
+        <item>the faster the planet moves</item>
+        <item>Martian watches do not keep very good time</item>
+        <item>from west to east</item>
+        <item>the Earth is closer to the Sun in summer than it is in winter</item>
+        <item>spying</item>
+    </string-array>
+
+    <string-array name="secondAnswers">
+        <item>planet - galaxy - star</item>
+        <item>a satellite</item>
+        <item>Venus</item>
+        <item>gravity</item>
+        <item>slightly squashed circles</item>
+        <item>the hotter the planet is</item>
+        <item>Mars spins more slowly on its axis than Earth does</item>
+        <item>from east to west</item>
+        <item>the Sun is brighter in summer than it is in winter</item>
+        <item>weather forecasting</item>
+    </string-array>
+
+    <string-array name="thirdAnswers">
+        <item>star - planet - galaxy</item>
+        <item>a comet</item>
+        <item>Earth</item>
+        <item>tension</item>
+        <item>spheres</item>
+        <item>the longer the planets orbit takes</item>
+        <item>Mars spins faster on its axis than Earth does</item>
+        <item>from north to south</item>
+        <item>the Earths axis is tilted</item>
+        <item>travelling to other planets</item>
+    </string-array>
+
+    <string-array name="correctAnswers">
+        <item>planet - star - galaxy</item>
+        <item>a satellite</item>
+        <item>Earth</item>
+        <item>gravity</item>
+        <item>slightly squashed circles</item>
+        <item>the longer the planets orbit takes</item>
+        <item>Mars spins more slowly on its axis than Earth does</item>
+        <item>from west to east</item>
+        <item>the Earths axis is tilted</item>
+        <item>travelling to other planets</item>
+    </string-array>
+
+
+
+    <string-array name="quetionCheckBox">
+        <item>Which of the following is a name of the star? </item>
+    </string-array>
+
+    <string-array name="firstAnswerCheckBox">
+        <item>Altair </item>
+    </string-array>
+
+    <string-array name="secondAnswerCheckBox">
+        <item>Wega</item>
+    </string-array>
+
+    <string-array name="thirdAnswerCheckBox">
+        <item>Ganimedes</item>
+    </string-array>
+
+    <string-array name="correctAnswerOne">
+      <item>Altair</item>
+    </string-array>
+
+    <string-array name="correctAnswerTwo">
+        <item>Wega</item>
+    </string-array>
+
+    <string-array name="correctAnswerThree">
+        <item>uncorrect</item>
+    </string-array>
+
+
+
+
+    </resources>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_quiz"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/starsbackground"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    tools:context="com.example.android.spacequiz.QuizActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:orientation="horizontal">
+
+
+        <ImageView
+                android:id="@+id/logoImageView"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/spacequizztitle" />
+
+        <ProgressBar
+            android:id="@+id/counterProgressBar"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:max="10000"
+            android:progress="0"
+            android:progressDrawable="@drawable/circularprogressbar"
+            android:background="@drawable/circularprogressbarbackground"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:id="@+id/counterTextView"
+            android:background="#00000000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="32sp"
+            android:text="10"
+            android:textColor="@color/white"
+            android:fontFamily="sans-serif-smallcaps"
+            android:layout_alignRight="@id/counterProgressBar"
+            android:layout_alignLeft="@id/counterProgressBar"
+            android:layout_alignTop="@id/counterProgressBar"
+            android:layout_alignBottom="@id/counterProgressBar" />
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/questionTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="12"
+        android:fontFamily="sans-serif-smallcaps"
+        android:gravity="center"
+        android:padding="12dp"
+        android:text="@string/przykladowe_pytanie"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        android:layout_weight="8"
+        android:weightSum="1">
+
+        <RadioButton
+            android:id="@+id/radioButton1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:layout_weight="0.33"
+            android:background="@drawable/buttonboardertransistion"
+            android:fontFamily="sans-serif-smallcaps"
+            android:paddingRight="30dp"
+            android:text="Answer 1"
+            android:textAlignment="center"
+            android:textColor="@color/white" />
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:layout_weight="0.33"
+            android:background="@drawable/buttonboardertransistion"
+            android:fontFamily="sans-serif-smallcaps"
+            android:paddingRight="30dp"
+            android:text="Answer 3"
+            android:textAlignment="center"
+            android:textColor="@color/white" />
+
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            android:background="@drawable/buttonboardertransistion"
+            android:fontFamily="sans-serif-smallcaps"
+            android:paddingRight="30dp"
+            android:text="Answer 2"
+            android:textAlignment="center"
+            android:textColor="@color/white" />
+
+    </RadioGroup>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ProgressBar
+            android:id="@+id/questionsProgressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:indeterminate="false"
+            android:maxHeight="2dp"
+            android:minHeight="2dp"
+            android:max="1000"
+            android:progressDrawable="@drawable/pinkprogress"
+            android:progress="5"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:paddingEnd="20dp"
+            />
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_weight="0"
+            android:id="@+id/submitButton"
+            android:background="@drawable/circlebuttonboarder"
+            android:onClick="submitButton"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>

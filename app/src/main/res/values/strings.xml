@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">SpaceQuiz</string>
+
+    <string name="przykladowe_pytanie">To jest przykladowe pytanie na ktore
+        uzytkwonik musi odpowiedizec
+    </string>
+
+
+</resources>
