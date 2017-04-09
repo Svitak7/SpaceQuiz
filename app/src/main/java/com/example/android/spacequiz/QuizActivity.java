@@ -132,6 +132,8 @@ public class QuizActivity extends Activity {
         thirdAnswerArray = getResources().getStringArray(R.array.thirdAnswers);
         correctAnswerArray = getResources().getStringArray(R.array.correctAnswers);
 
+        QuestionRadioButton.numberOfQuestions = questionArray.length;
+
         for (int i = 0; i < numberOfQuestions; i++) {
             list.add(new QuestionRadioButton(questionArray[i], firstAnswerArray[i], secondAnswerArray[i], thirdAnswerArray[i], correctAnswerArray[i]));
         }

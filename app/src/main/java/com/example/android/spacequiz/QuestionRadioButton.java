@@ -7,7 +7,7 @@ package com.example.android.spacequiz;
 class QuestionRadioButton {
 
 
-    public static  int numberOfQuestions=10;
+    public static  int numberOfQuestions;
     private String question;
     private String answerOne;
     private String answerTwo;
