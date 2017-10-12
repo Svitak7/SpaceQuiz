@@ -39,6 +39,33 @@
 
     </LinearLayout>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/bottom_layout">
+
+
+        <Button
+            android:id="@+id/retry_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/buttonboarder"
+            android:layout_alignParentLeft="true"
+            tools:text="Retry"
+            />
+
+        <Button
+            android:id="@+id/exit_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/buttonboarder"
+            android:layout_alignParentRight="true"
+            tools:text="Exit"/>
+
+
+    </RelativeLayout>
+
 
 
 </RelativeLayout>

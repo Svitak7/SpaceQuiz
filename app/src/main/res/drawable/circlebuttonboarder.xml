@@ -3,13 +3,16 @@
     android:exitFadeDuration="480"
     android:enterFadeDuration="120" >
     <item android:state_pressed="false">
-    <shape android:shape="oval">
-        <solid android:color="@android:color/transparent"/>
-        <stroke android:width="5dp"
-        android:color="@color/white"/>
-         <size android:height="40dp"
-        android:width="40dp"/>
+        <shape android:shape="oval">
+            <solid android:color="@android:color/transparent"/>
+            <stroke android:width="5dp"
+            android:color="@color/white"/>
+             <size android:height="40dp"
+            android:width="40dp"/>
         </shape>
+
+
+
     </item>
 
     <item android:state_pressed="true">

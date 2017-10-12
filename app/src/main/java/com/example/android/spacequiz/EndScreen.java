@@ -1,9 +1,12 @@
 package com.example.android.spacequiz;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
@@ -15,6 +18,7 @@ public class EndScreen extends Activity {
     private float           percentScore;
     private int             questionNumber;
     private String          scorePercentageString;
+    private Intent          intent;
 
 
     @Override
@@ -37,5 +41,28 @@ public class EndScreen extends Activity {
         scorePercentageString = String.format("%.1f", percentScore);
 
         scoreView.setText(scorePercentageString+"%");
+
+        intent = new Intent(this,StartScreen.class);
+
+        Button retryButton = (Button) findViewById(R.id.retry_button);
+        retryButton.setText("Retry");
+
+        retryButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(intent);
+            }
+        });
+
+        Button exitButton = (Button) findViewById(R.id.exit_button);
+        exitButton.setText("Exit");
+        exitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+
     }
 }

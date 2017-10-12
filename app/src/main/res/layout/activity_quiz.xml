@@ -145,6 +145,8 @@
             android:layout_height="50dp"
             android:layout_weight="0"
             android:id="@+id/submitButton"
+            android:text="\u2713"
+            android:textSize="32dp"
             android:background="@drawable/circlebuttonboarder"
             android:onClick="submitButton"/>
 

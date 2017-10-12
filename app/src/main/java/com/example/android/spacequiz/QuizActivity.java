@@ -50,6 +50,8 @@ public class QuizActivity extends Activity {
     private TransitionDrawable transition2;
     private TransitionDrawable transition3;
     private CountDownTimer mCountDownTimer;
+    private boolean disableSubmitButton = false;
+    private boolean checkingAnswerInProgress = false;
 
     enum answer {
 
@@ -148,9 +150,9 @@ public class QuizActivity extends Activity {
         secondAnswerRadioButton.setText(questionRadioButtonObjectArray.get(questionNumber).getAnswerTwo());
         thirdAnswerRadioButton.setText(questionRadioButtonObjectArray.get(questionNumber).getAnswerThree());
         radioGroup.clearCheck();
-
-
         questionWasAnswered = false;
+        checkingAnswerInProgress = false;
+        disableSubmitButton = false;
         clockDone = false;
 
         if(!restart)
@@ -164,7 +166,6 @@ public class QuizActivity extends Activity {
             countDown(tempTimer, 1);
             restart = false;
         }
-
 
     }
 
@@ -184,6 +185,7 @@ public class QuizActivity extends Activity {
 
     private void animateAfterClockIsDone()
     {
+        checkingAnswerInProgress = true;
 
         firstAnswerRadioButton.setBackground(getDrawable(R.drawable.button_boarder_transition_uncorrect));
         secondAnswerRadioButton.setBackground(getDrawable(R.drawable.button_boarder_transition_uncorrect));
@@ -207,24 +209,31 @@ public class QuizActivity extends Activity {
     private answer checkAnswersRadio() {
         String radioButtonText;
 
-        if (firstAnswerRadioButton.isChecked()) {
+        if (firstAnswerRadioButton.isChecked())
+        {
             radioButtonText = firstAnswerRadioButton.getText().toString();
-
             radioButton = radioButtonEnum.RADIO_ONE;
-
-        } else if (secondAnswerRadioButton.isChecked()) {
+        }
+        else if (secondAnswerRadioButton.isChecked())
+        {
             radioButtonText = secondAnswerRadioButton.getText().toString();
             radioButton = radioButtonEnum.RADIO_TWO;
-        } else if (thirdAnswerRadioButton.isChecked()) {
+        }
+        else if (thirdAnswerRadioButton.isChecked())
+        {
             radioButtonText = thirdAnswerRadioButton.getText().toString();
             radioButton = radioButtonEnum.RADIO_THREE;
-        } else {
+        }
+        else
+        {
             return answer.MISSING;
         }
 
-        if (radioButtonText.equals(questionRadioButtonObjectArray.get(questionIncrement).getCorrectAnswer())) {
+        if (radioButtonText.equals(questionRadioButtonObjectArray.get(questionIncrement).getCorrectAnswer()))
+        {
             return answer.CORRECT;
-        } else return answer.UNCORRECT;
+        }
+        else return answer.UNCORRECT;
     }
 
     private void countDown(int maxSeconds, int interval)
@@ -249,6 +258,11 @@ public class QuizActivity extends Activity {
             @Override
             public void onFinish() {
                 clockDone = true;
+                if(questionWasAnswered)
+                {
+                    mCountDownTimer.cancel();
+                    return;
+                }
                 animateAfterClockIsDone();
             }
         }.start();
@@ -291,17 +305,21 @@ public class QuizActivity extends Activity {
 
     private void questionMain()
     {
+            if (checkingAnswerInProgress) return;
             answer userAnswer = checkAnswersRadio();
             TransitionDrawable transition;
 
-            if(!clockDone && !animationIsStarted)
+            if(!clockDone && !animationIsStarted && !disableSubmitButton)
             {
                     if (userAnswer == answer.MISSING) {
                         Toast.makeText(this, "Select the answer", Toast.LENGTH_SHORT).show();
                         return;
                     }
                     if (userAnswer == answer.CORRECT) score++;
+
                     transition = setAccordingBackgroundToAnimate(userAnswer);
+                    disableSubmitButton = true;
+                    checkingAnswerInProgress = true;
 
                     if (transition == null) {
                     } else {
@@ -313,37 +331,37 @@ public class QuizActivity extends Activity {
 
     private void animateBoardersAndNextQuestion(final TransitionDrawable transition, final boolean nextQuestion)
     {
-        transition.setCrossFadeEnabled(true);
-        transition.startTransition(500);
+            transition.setCrossFadeEnabled(true);
+            transition.startTransition(500);
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                transition.reverseTransition(1000);
-                animationIsStarted = true;
-            }
-        }, 500);
-
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                ObjectAnimator animation = ObjectAnimator.ofInt(quizCompletionProgressBar, "progress", (questionIncrement+1)*100);
-                animation.setDuration(300);
-                animation.setInterpolator(new DecelerateInterpolator());
-                animation.start();
-
-                if(nextQuestion) {
-                    questionIncrement++;
-                    displayQuestion(questionIncrement);
-                    animationIsStarted = false;
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    transition.reverseTransition(1000);
+                    animationIsStarted = true;
                 }
+            }, 500);
+
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    ObjectAnimator animation = ObjectAnimator.ofInt(quizCompletionProgressBar, "progress", (questionIncrement + 1) * 100);
+                    animation.setDuration(300);
+                    animation.setInterpolator(new DecelerateInterpolator());
+                    animation.start();
+
+                    if (nextQuestion) {
+                        questionIncrement++;
+                        displayQuestion(questionIncrement);
+                        disableSubmitButton = false;
+                        animationIsStarted = false;
+                    }
 
 
-
-            }
-        }, 1500);
-
+                }
+            }, 1500);
     }
+
 
 
 }
