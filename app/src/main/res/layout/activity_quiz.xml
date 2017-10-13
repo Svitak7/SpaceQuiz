@@ -33,7 +33,7 @@
             style="@android:style/Widget.ProgressBar.Horizontal"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:max="10000"
+            android:max="20000"
             android:progress="0"
             android:progressDrawable="@drawable/circularprogressbar"
             android:background="@drawable/circularprogressbarbackground"

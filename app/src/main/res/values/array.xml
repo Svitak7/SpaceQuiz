@@ -12,6 +12,21 @@
         <item>In which direction does the Earth spin?</item>
         <item>Why do we have seasons on Earth?</item>
         <item>Which of the following is not a use of artificial satellites?</item>
+        <item>How much larger the Sun is than Earth</item>
+        <item>What is the surface temperature of Venus?</item>
+        <item>Which Planet spins backwards relative to the others?</item>
+        <item>The Moon orbits the Earth every..</item>
+        <item>How long a solar eclipse can last?</item>
+        <item>Which is the largest planet in our solar system?</item>
+        <item>How many planets has rings around them?</item>
+        <item>Who was the first woman to reach space?</item>
+        <item>When was the Pluto reclassified from a planet to a dwarf planet?</item>
+        <item>Which planet has the most volcanoes?</item>
+        <item>Which planet is known as the Morning Start or the Evening Star?</item>
+        <item>What is the coldest place in the universe?</item>
+        <item>The hottest place in the universe is located in which constellation?</item>
+        <item>What is the most common type of star found in the Milky Way?</item>
+        <item>What has a gravitational pull so strong that even light cannot escape it?</item>
 
     </string-array>
 
@@ -26,6 +41,21 @@
         <item>from west to east</item>
         <item>the Earth is closer to the Sun in summer than it is in winter</item>
         <item>spying</item>
+        <item>30 times</item>
+        <item>over -50 degrees Celsius</item>
+        <item>Venus</item>
+        <item>23.3 days</item>
+        <item>7 and a half minutes</item>
+        <item>Neptune</item>
+        <item>4</item>
+        <item>Sally Ride</item>
+        <item>in 2006</item>
+        <item>Mars</item>
+        <item>Venus</item>
+        <item>Dumbbell Nebula</item>
+        <item>Virgo constellation</item>
+        <item>Giants</item>
+        <item>Black hole</item>
     </string-array>
 
     <string-array name="secondAnswers">
@@ -39,6 +69,21 @@
         <item>from east to west</item>
         <item>the Sun is brighter in summer than it is in winter</item>
         <item>weather forecasting</item>
+        <item>3000 times</item>
+        <item>450 degrees Celsius</item>
+        <item>Jupiter</item>
+        <item>27.3 days</item>
+        <item>3 and a half minutes</item>
+        <item>Uranus</item>
+        <item>2</item>
+        <item>Svetlana Savitskaya</item>
+        <item>in 2004</item>
+        <item>Jupiter</item>
+        <item>Mercury</item>
+        <item>Boomerang Nebula</item>
+        <item>Cepheus constellation</item>
+        <item>Red dwarfs</item>
+        <item>Hypergiant</item>
     </string-array>
 
     <string-array name="thirdAnswers">
@@ -52,6 +97,21 @@
         <item>from north to south</item>
         <item>the Earths axis is tilted</item>
         <item>travelling to other planets</item>
+        <item>300000 times</item>
+        <item>800 degrees Celsius</item>
+        <item>Jupiter</item>
+        <item>12.2 days</item>
+        <item>23 minutes</item>
+        <item>Jupiter</item>
+        <item>3</item>
+        <item>Valentina Tereshkova</item>
+        <item>in 2007</item>
+        <item>Venus</item>
+        <item>Neptune</item>
+        <item>Eskimo Nebula</item>
+        <item>Phoenix constellation</item>
+        <item>Main sequences</item>
+        <item>Quasar</item>
     </string-array>
 
     <string-array name="correctAnswers">
@@ -65,37 +125,26 @@
         <item>from west to east</item>
         <item>the Earths axis is tilted</item>
         <item>travelling to other planets</item>
+        <item>300000 times</item>
+        <item>450 degrees Celsius</item>
+        <item>Venus</item>
+        <item>27.3 days</item>
+        <item>7 and a half minutes</item>
+        <item>Jupiter</item>
+        <item>4</item>
+        <item>Valentina Tereshkova</item>
+        <item>in 2006</item>
+        <item>Venus</item>
+        <item>Venus</item>
+        <item>Boomerang Nebula</item>
+        <item>Virgo constellation</item>
+        <item>Red dwarfs</item>
+        <item>Black hole</item>
     </string-array>
 
 
 
-    <string-array name="quetionCheckBox">
-        <item>Which of the following is a name of the star? </item>
-    </string-array>
 
-    <string-array name="firstAnswerCheckBox">
-        <item>Altair </item>
-    </string-array>
-
-    <string-array name="secondAnswerCheckBox">
-        <item>Wega</item>
-    </string-array>
-
-    <string-array name="thirdAnswerCheckBox">
-        <item>Ganimedes</item>
-    </string-array>
-
-    <string-array name="correctAnswerOne">
-      <item>Altair</item>
-    </string-array>
-
-    <string-array name="correctAnswerTwo">
-        <item>Wega</item>
-    </string-array>
-
-    <string-array name="correctAnswerThree">
-        <item>uncorrect</item>
-    </string-array>
 
 
 

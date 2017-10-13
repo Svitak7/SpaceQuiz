@@ -33,7 +33,7 @@ public class QuizActivity extends Activity {
     private boolean animationIsStarted     = false;
     private boolean questionWasAnswered    = false;
     private boolean restart                = false;
-    private int     timer                  = 10;
+    private int     timer                  = 20;
     private int     tempTimer              = 0;
 
     private TextView questionTextView;
@@ -89,7 +89,7 @@ public class QuizActivity extends Activity {
             clockIncrementAnimation-=1000;
             restart = true; //flag for reseting timer
         }
-
+        quizCompletionProgressBar.setMax(QuestionRadioButton.getNumberOfQuestions()*100);
         displayQuestion(questionIncrement);
 
     }
@@ -242,6 +242,11 @@ public class QuizActivity extends Activity {
         {
             @Override
             public void onTick(long millisUntilFinished) {
+                if(questionWasAnswered)
+                {
+                    mCountDownTimer.cancel();
+                    return;
+                }
                 ObjectAnimator animation = ObjectAnimator.ofInt(clockCounterProgressBar, "progress", clockIncrementAnimation);
                 animation.setDuration(1000);
                 animation.setInterpolator(new DecelerateInterpolator());
@@ -249,10 +254,7 @@ public class QuizActivity extends Activity {
                 tempTimer = (int) (millisUntilFinished/1000)-1;
                 counterTextView.setText(String.valueOf((millisUntilFinished / 1000)-1));
                 clockIncrementAnimation+=1000;
-                if(questionWasAnswered)
-                {
-                    mCountDownTimer.cancel();
-                }
+
 
             }
             @Override
@@ -263,6 +265,7 @@ public class QuizActivity extends Activity {
                     mCountDownTimer.cancel();
                     return;
                 }
+                disableSubmitButton = true;
                 animateAfterClockIsDone();
             }
         }.start();
@@ -321,7 +324,9 @@ public class QuizActivity extends Activity {
                     disableSubmitButton = true;
                     checkingAnswerInProgress = true;
 
-                    if (transition == null) {
+                    if (transition == null)
+                    {
+                        return;
                     } else {
                         questionWasAnswered = true;
                         animateBoardersAndNextQuestion(transition, true);
