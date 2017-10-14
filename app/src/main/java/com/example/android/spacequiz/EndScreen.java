@@ -31,10 +31,14 @@ public class EndScreen extends Activity {
 
         ratingBar = (RatingBar) findViewById(R.id.ratingBarView);
         scoreView = (TextView) findViewById(R.id.scoreTextView);
-        ratingBar.setMax(10);
-        ratingBar.setNumStars(5);
+
         score = getIntent().getIntExtra("score",0);
         questionNumber = getIntent().getIntExtra("numberOfQuestions",0);
+
+        ratingBar.setMax(questionNumber);
+        ratingBar.setNumStars(5);
+        ratingBar.setFocusable(false);
+        ratingBar.setIsIndicator(true);
 
         percentScore = ((float)score/questionNumber)*100f;
         ratingBar.setProgress(score);
@@ -51,6 +55,7 @@ public class EndScreen extends Activity {
             @Override
             public void onClick(View v) {
                 startActivity(intent);
+                finish();
             }
         });
 

@@ -24,7 +24,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:max="10"
-            android:clickable="false"
             android:stepSize="1.0"
             android:background="@drawable/buttonboarder"/>
 
